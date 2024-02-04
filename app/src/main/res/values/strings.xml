@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">MykotlinDemo</string>
+
+    <string name="app_label">Third Party Demo</string>
+    <string name="discount">Discount</string>
+    <string name="payment">Payment</string>
+    <string name="e_receipt">eReceipt</string>
+    <string name="after_tran">After Transaction</string>
+    <string name="after_total_amount">After Total Amount</string>
+    <string name="dcc">DCC</string>
+    <string name="register">Register</string>
+    <string name="check_for_registration">CHECK FOR REGISTRATION</string>
+    <string name="unregister">Unregister</string>
+    <string name="txn_amt">Approved Amount</string>
+    <string name="full_amt">Full Amount</string>
+    <string name="partial_amt">Partial Amount</string>
+    <string name="continue_apex">Continue BankCard</string>
+    <string name="decline">Decline</string>
+    <string name="swipe_card">Swipe Card</string>
+    <string name="finish">Finish</string>
+    <string name="print">Print</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+
+    <string name="title_activity_do_discount">DoDiscount</string>
+
+    <string name="discount2">Discount2</string>
+    <string name="no_discount">No Discount</string>
+    <string name="total">Total:</string>
+    <string name="title_activity_discount">DiscountActivity</string>
+    <string name="submit">Submit</string>
+    <string name="fail">Fail</string>
+    <string name="survey_question">How is the customer service?</string>
+    <string name="excellent">Excellent</string>
+    <string name="good">Good</string>
+    <string name="ordinary">Ordinary</string>
+    <string name="poor">Poor</string>
+    <string name="bad">Very Bad</string>
+    <string name="application_id">Application ID</string>
+    <string name="hook">HOOK</string>
+    <string name="search">Search</string>
+</resources>
