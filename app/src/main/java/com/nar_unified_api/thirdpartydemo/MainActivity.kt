@@ -8,7 +8,10 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
-import com.example.myapplication.kotlin_demo.databinding.ActivityMainBinding
+import com.nar_unified_api.thirdpartydemo.MainActivity.amounts.result
+import com.nar_unified_api.thirdpartydemo.databinding.ActivityMainBinding
+import kotlinx.serialization.encodeToString
+
 import kotlinx.serialization.json.Json
 
 import java.util.HashMap
@@ -18,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private var PACKAGE_NAME: String = "com.nar_unified_api.thirdpartydemo"
 
     public companion object amounts {
         var result: String? = null
@@ -50,10 +54,10 @@ class MainActivity : AppCompatActivity() {
                 ExtThirdPartyTransaction.INCREMENTAL_AUTH.toString(),
                 ExtThirdPartyTransaction.FORCE_PREAUTH.toString()
             ),
-            thirdPartyPackage = BuildConfig.APPLICATION_ID,
-            thirdPartyReceiver = BuildConfig.APPLICATION_ID + ".DiscountReceiver",
-            registerResponseReceiver = BuildConfig.APPLICATION_ID + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
-            thirdPartyAction = BuildConfig.APPLICATION_ID + ".ACTION_APPLY_BEFORE_TRANSACTION",
+            thirdPartyPackage = PACKAGE_NAME,
+            thirdPartyReceiver = PACKAGE_NAME + ".DiscountReceiver",
+            registerResponseReceiver = PACKAGE_NAME + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
+            thirdPartyAction = PACKAGE_NAME + ".ACTION_APPLY_BEFORE_TRANSACTION",
             buttonTextEn = "Discount Demo",
             buttonTextFr = "Remise Demo",
             buttonTextSp = "Descuento Demo",
@@ -84,10 +88,10 @@ class MainActivity : AppCompatActivity() {
                 ExtThirdPartyTransaction.REFUND.toString(),
                 ExtThirdPartyTransaction.VOID.toString()
             ),
-            thirdPartyPackage = BuildConfig.APPLICATION_ID,
-            thirdPartyReceiver = BuildConfig.APPLICATION_ID + ".PaymentReceiver",
-            registerResponseReceiver = BuildConfig.APPLICATION_ID + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
-            thirdPartyAction = BuildConfig.APPLICATION_ID + ".ACTION_APPLY_PAYMENT",
+            thirdPartyPackage = PACKAGE_NAME,
+            thirdPartyReceiver = PACKAGE_NAME + ".PaymentReceiver",
+            registerResponseReceiver = PACKAGE_NAME + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
+            thirdPartyAction = PACKAGE_NAME + ".ACTION_APPLY_PAYMENT",
             buttonTextEn = "Payment Demo",
             buttonTextFr = "Paiement Demo",
             buttonTextSp = "Pago Demo",
@@ -105,7 +109,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    var packageName: String = ""
+
 
 
     fun registerAppForEReceipt(unregister: Boolean = false) {
@@ -134,6 +138,8 @@ class MainActivity : AppCompatActivity() {
             buttonTextFr = "Reçu Demo",
             buttonTextSp = "Recibo Demo",
         )
+
+
         val registerRequestString = Json.encodeToString(registerRequest)
         val componentName = ComponentName(
             ThirdPartyIdentifiers.REGISTER_PACKAGE.value,
@@ -165,10 +171,10 @@ class MainActivity : AppCompatActivity() {
                 ExtThirdPartyTransaction.INCREMENTAL_AUTH.toString(),
                 ExtThirdPartyTransaction.FORCE_PREAUTH.toString(),
             ),
-            thirdPartyPackage = BuildConfig.APPLICATION_ID,
-            thirdPartyReceiver = BuildConfig.APPLICATION_ID + ".AfterTxnReceiver",
-            registerResponseReceiver = BuildConfig.APPLICATION_ID + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
-            thirdPartyAction = BuildConfig.APPLICATION_ID + ".ACTION_APPLY_AFTER_TXN",
+            thirdPartyPackage = PACKAGE_NAME,
+            thirdPartyReceiver = PACKAGE_NAME + ".AfterTxnReceiver",
+            registerResponseReceiver = PACKAGE_NAME + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
+            thirdPartyAction = PACKAGE_NAME + ".ACTION_APPLY_AFTER_TXN",
             buttonTextEn = "After Transaction Demo",
             buttonTextFr = "Enquête Demo",
             buttonTextSp = "Encuesta Demo",
@@ -200,10 +206,10 @@ class MainActivity : AppCompatActivity() {
                 ExtThirdPartyTransaction.PREAUTH.toString(),
                 ExtThirdPartyTransaction.PREAUTH_COMPLETION.toString()
             ),
-            thirdPartyPackage = BuildConfig.APPLICATION_ID,
-            thirdPartyReceiver = BuildConfig.APPLICATION_ID + ".DccReceiver",
-            registerResponseReceiver = BuildConfig.APPLICATION_ID + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
-            thirdPartyAction = BuildConfig.APPLICATION_ID + ".ACTION_APPLY_DCC",
+            thirdPartyPackage = PACKAGE_NAME,
+            thirdPartyReceiver = PACKAGE_NAME + ".DccReceiver",
+            registerResponseReceiver = PACKAGE_NAME + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
+            thirdPartyAction = PACKAGE_NAME + ".ACTION_APPLY_DCC",
             buttonTextEn = "DCC Demo",
             buttonTextFr = "DCC Demo",
             buttonTextSp = "DCC Demo",
@@ -235,10 +241,10 @@ class MainActivity : AppCompatActivity() {
                 ExtThirdPartyTransaction.PREAUTH.toString(),
                 ExtThirdPartyTransaction.PREAUTH_COMPLETION.toString()
             ),
-            thirdPartyPackage = BuildConfig.APPLICATION_ID,
-            thirdPartyReceiver = BuildConfig.APPLICATION_ID + ".AfterTotalAmountReceiver",
-            registerResponseReceiver = BuildConfig.APPLICATION_ID + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
-            thirdPartyAction = BuildConfig.APPLICATION_ID + ".ACTION_APPLY_AFTER_TOTAL_AMOUNT",
+            thirdPartyPackage = PACKAGE_NAME,
+            thirdPartyReceiver = PACKAGE_NAME + ".AfterTotalAmountReceiver",
+            registerResponseReceiver = PACKAGE_NAME + ThirdPartyIdentifiers.REGISTER_RESPONSE_RECEIVER.value,
+            thirdPartyAction = PACKAGE_NAME + ".ACTION_APPLY_AFTER_TOTAL_AMOUNT",
             buttonTextEn = "After Total Amount Demo",
             buttonTextFr = "Après totale Demo",
             buttonTextSp = "Después Del Total Demo",
