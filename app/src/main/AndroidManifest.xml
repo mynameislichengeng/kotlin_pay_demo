@@ -13,16 +13,139 @@
         android:theme="@style/Theme.MykotlinDemo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".SearchHookActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MykotlinDemo">
+            android:label="@string/app_label"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DiscountActivity"
+            android:exported="true"
+            android:label="@string/title_activity_discount"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="com.nar_unified_api.thirdpartydemo.ACTION_APPLY_BEFORE_TRANSACTION" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_label"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="true"
+            android:label="@string/payment"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.nar_unified_api.thirdpartydemo.ACTION_APPLY_PAYMENT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".EReceiptActivity"
+            android:exported="true"
+            android:label="@string/e_receipt"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.nar_unified_api.thirdpartydemo.ACTION_APPLY_E_RECEIPT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AfterTxnActivity"
+            android:exported="true"
+            android:label="@string/after_tran"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.nar_unified_api.thirdpartydemo.ACTION_APPLY_AFTER_TXN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DccActivity"
+            android:exported="true"
+            android:label="@string/dcc"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.nar_unified_api.thirdpartydemo.ACTION_APPLY_DCC" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AfterTotalAmountActivity"
+            android:exported="true"
+            android:label="@string/after_total_amount"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.nar_unified_api.thirdpartydemo.ACTION_APPLY_AFTER_TOTAL_AMOUNT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name="com.nar_unified_api.thirdpartydemo.RegisterResponseReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
+        <receiver
+            android:name="com.nar_unified_api.thirdpartydemo.DiscountReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="4">
+                <action android:name="com.nar_unified_api.ACTION_APPLY_BEFORE_TRANSACTION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nar_unified_api.thirdpartydemo.PaymentReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="4">
+                <action android:name="com.nar_unified_api.ACTION_APPLY_PAYMENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nar_unified_api.thirdpartydemo.EReceiptReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="4">
+                <action android:name="com.nar_unified_api.ACTION_APPLY_E_RECEIPT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nar_unified_api.thirdpartydemo.AfterTxnReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="4">
+                <action android:name="com.nar_unified_api.ACTION_APPLY_AFTER_TXN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nar_unified_api.thirdpartydemo.AfterTotalAmountReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="4">
+                <action android:name="com.nar_unified_api.ACTION_APPLY_AFTER_TOTAL_AMOUNT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.nar_unified_api.thirdpartydemo.DccReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="4">
+                <action android:name="com.nar_unified_api.ACTION_APPLY_DCC" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
