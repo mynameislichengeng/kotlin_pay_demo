@@ -59,6 +59,7 @@ class AfterTxnActivity : AppCompatActivity() {
     }
 }
 
+
 class AfterTxnReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -75,4 +76,8 @@ class AfterTxnReceiver : BroadcastReceiver() {
             setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         })
     }
+}
+
+fun main(){
+    print("hello-1")
 }

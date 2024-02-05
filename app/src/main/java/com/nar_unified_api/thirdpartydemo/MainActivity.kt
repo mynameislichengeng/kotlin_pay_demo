@@ -291,6 +291,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 )
             }
+//            binding.dccRegisterBtn.setOnClickListener {  }
             binding.dccRegisterBtn.setOnClickListener { registerAppForDCC(false) }
             binding.dccUnregisterBtn.setOnClickListener { registerAppForDCC(true) }
             binding.exitBtn.setOnClickListener { finish() }

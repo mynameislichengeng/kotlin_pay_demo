@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MykotlinDemo"
         tools:targetApi="31">
+
         <activity
             android:name=".SearchHookActivity"
             android:exported="true"
@@ -28,6 +29,16 @@
                 <action android:name="com.nar_unified_api.thirdpartydemo.ACTION_APPLY_BEFORE_TRANSACTION" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Main2Activity"
+            android:exported="true"
+            android:theme="@style/Theme.ThirdPartyDemo.NoActionBar"
+            android:screenOrientation="portrait">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".MainActivity"
